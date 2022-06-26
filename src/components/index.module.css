@@ -1,40 +1,163 @@
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.homeLink {
+  position: relative;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: calc(4.5em + 5vw);
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+
+.homeLink:hover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+
+  /* Adjust height and bottom values to work with selected font */
+  height: 0.05em;
+  bottom: 0.1em;
+
+  /* Create gradient */
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(var(--link-color), 0.6) 30%,
+    rgba(var(--link-color), 0.7) 50%,
+    rgba(var(--link-color), 0.6) 70%,
+    transparent 100%
+  );
+
+  /* Set-up fade-in animation */
+  opacity: 0;
+  animation: fadeIn 400ms ease-out forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+.about {
+  margin-top: 60px;
+  padding-bottom: 92px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.about > p {
+  max-width: 100%;
+}
+
+/* .bottomImgBox {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 400px;
+  max-width: 400px;
+} */
+/* 
+.bottomMain {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+} */
+
+.introContainer {
+  flex: 3;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.introContainer__list {
+  font-size: 18px;
+  font-style: italic;
+  list-style: none;
+  margin-left: 0;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.introContainer__contact {
+  list-style: none;
+  font-size: 32px;
+  margin-left: 0;
+  margin-bottom: 0
+}
+
+.introContainer__contact__item {
+  padding: 0px;
+  font-size: medium;
+  color: #ffff;
+  margin-bottom: 0;
+}
+
+.introContainer__contact__item a {
+  color: #ffff;
+}
+
+.introContainer__contact__item a:visited,
+.introContainer__contact__item a:hover {
+  color: #ffff;
+}
+
+.introContainer__contact_headerTitle {
+  text-decoration: underline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.introContainer__contact_headerText {
+  font-family: sans-serif;
+  font-size: 18px;
+  margin-bottom: 0;
+  line-height: 20px;
+}
+
 .list {
   display: grid;
   margin: 0;
   /* https://css-tricks.com/responsive-layouts-fewer-media-queries/ */
   --w: 280px;
-  --n: 2;
+  --n: 3;
   gap: var(--size-gap);
   grid-template-columns: repeat(
     auto-fit,
     minmax(max(var(--w), 100%/ (var(--n) + 1) + 0.1%), 1fr)
   );
-  margin-bottom: var(--size-gap);
-  margin-top: var(--size-gap);
+  position: relative;
 }
 
 .listItem {
-  margin: 0;
-}
-
-.listItem::marker {
-  color: #e95800;
-}
-
-.listItem:nth-child(2)::marker {
-  color: #159bf3;
-}
-
-.listItem:nth-child(3)::marker {
-  color: #8eb814;
-}
-
-.listItem:nth-child(4)::marker {
-  color: #663399;
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 650px;
 }
 
 .listItemLink {
-  color: var(--color-primary);
+  /* color: var(--color-primary); */
+  color: var(--color-text);
   font-weight: bold;
 }
 

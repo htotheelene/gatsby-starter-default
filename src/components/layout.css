@@ -1,7 +1,7 @@
 :root {
   --border-radius: 4px;
   --color-text: #333;
-  --color-primary: #7026b9;
+  --color-primary: #002f65;
   --color-code-bg: #fff4db;
   --color-code: #8a6534;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
@@ -23,7 +23,7 @@
   --space-6: 64px;
   --size-content: 54rem;
   --size-gutter: var(--space-5);
-  --size-gap: var(--space-6);
+  --size-gap: var(--space-5);
 }
 html {
   -webkit-text-size-adjust: 100%;
@@ -48,14 +48,13 @@ a {
   color: var(--color-primary);
   text-decoration: none;
   font-weight: 500;
-  text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 2px;
 }
 a:active,
 a:hover {
   outline-width: 0;
-  text-decoration: none;
+  text-decoration: underline;
 }
 abbr[title] {
   border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
