@@ -38,6 +38,7 @@ const Layout = ({ children }) => {
             justifyContent: `center`,
             alignItems: `center`,
             color: `#ffffff`,
+            marginTop: `70px`
           }}
         >
           <StaticImage
